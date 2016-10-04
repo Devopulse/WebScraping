@@ -9,5 +9,5 @@ while(True):
     str(html_elements)
     curr_time = html_elements.getText()
     print(html_elements.getText())
-    subprocess.call(['./signalfx_trial.sh',curr_time[6:]])
+    subprocess.call(['./graphite_trial.sh',curr_time[6:]])
     time.sleep(30)
