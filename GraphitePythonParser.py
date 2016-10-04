@@ -1,7 +1,7 @@
 import bs4, requests, time, subprocess
 
 while(True):
-    res=requests.get('https://www.example.com/')
+    res=requests.get('https://www.utctime.net/')
     res.raise_for_status()
     noStarchSoup=bs4.BeautifulSoup(res.text,"html.parser")
     type(noStarchSoup)
