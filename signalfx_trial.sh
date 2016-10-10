@@ -3,7 +3,7 @@
 #while true
 #do
    # Set the SignalFx API token  via the "Access tokens" link next to the organization in your Profile page
-   SF_TOKEN="opJIzAUzNiXXXcvfDMgeQ"
+   SF_TOKEN="xxxxxx"
    #number=$RANDOM
    number=$1
    echo $number
