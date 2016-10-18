@@ -1,0 +1,5 @@
+
+================================Formatting the output in the Mysql query================
+===========Active records - no reporting records ====================
+
+mysql -N -h HOSTNAME -u root -SOMECODDE -P 3306 TABLE_NAME -e " set @latest_sun =  DATE_SUB(DATE(NOW()), INTERVAL DAYOFWEEK(NOW())+13 DAY) ; select name from Campaign c where (@latest_sun between c.start_date and c.end_date) and c.deactivated =0 and name not in (select name from TABLE_NAME c left join campaign_lci_stats s on s.campaign_id=c.campaignId and @latest_sun=s.stat_date and s.num_impressions > 250000 and s.lci_vs_matched_lift_percentage is not null where (@latest_sun between c.start_date and c.end_date) and c.deactivated =0 and s.id is null); " | sed 's/\t/","/g;s/^/"/;s/$/"/;s/\n//g' > output.txt
